@@ -8,7 +8,7 @@ admin.site.register(Genre)
 #admin.site.register(BookInstance)
 admin.site.register(Language)
 
-
+#new Admin fields
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
 
