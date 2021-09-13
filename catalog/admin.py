@@ -8,9 +8,11 @@ admin.site.register(Genre)
 #admin.site.register(BookInstance)
 admin.site.register(Language)
 
+
 #The class to make Books inline
 class BookInline(admin.TabularInline):
     model = Book
+
 
 
 class AuthorAdmin(admin.ModelAdmin):
