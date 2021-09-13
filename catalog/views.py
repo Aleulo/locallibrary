@@ -29,7 +29,7 @@ def index(request):
         genre_name_dict[genre] = count_genres(genre)
 
      #this is formated dictionary to present on the website
-    new_format = ""#print(*['{} : {}'.format(k,v) for k,v in genre_name_dict], sep = "\n")
+    new_format = ""
     for key, value in genre_name_dict.items():
         new_format += "{}: {}, \n".format(key, value)
 
@@ -45,3 +45,12 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
+
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
+
+class BookDetailView(generic.DetailView):
+    model = Book
