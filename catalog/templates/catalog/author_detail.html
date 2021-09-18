@@ -12,4 +12,11 @@
       <p><strong>Summary: </strong> {{ author.date_of_death }}</p>
     {% endif %}
   </div>
+    <p>Books:</p>
+  <div>
+    {% for book in author.book_set.all %}
+  <div><a href="{% url 'book-detail' book.pk %}">{{book}}</a> ({{book.bookinstance_set.all.count}})</div>
+  <div>{{book.summary}}</div>
+    {% endfor %}
+    </div>
 {% endblock %}
