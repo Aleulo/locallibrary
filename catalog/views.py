@@ -33,6 +33,10 @@ def index(request):
     for key, value in genre_name_dict.items():
         new_format += "{}: {}, \n".format(key, value)
 
+    # Number of visits to this view, as counted in the session variable.
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
 
 
     context = {
@@ -41,6 +45,7 @@ def index(request):
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
         'genre': new_format,
+        'num_visits': num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable
