@@ -62,7 +62,7 @@ class BookListView(generic.ListView):
 class BookDetailView(generic.DetailView):
     model = Book
 
-
+#new lists
 class AuthorListView(generic.ListView):
     model = Author
     paginate_by = 2
